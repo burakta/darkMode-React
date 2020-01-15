@@ -1,0 +1,32 @@
+const dark = {backgroundColor:"1b262c", color:"white"}
+
+class DarkMode extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      display: true
+    }
+    this.darkMode = this.darkMode.bind(this);
+  }
+  darkMode() {
+    this.setState({
+      display: !this.state.display
+    });
+  }
+  render() {
+    if(this.state.display) {
+    return (
+       <body style = {dark}>
+         <button onClick={this.darkMode}>Dark Mode</button>
+       </body>
+    );
+  }else {
+    return (
+      <body>
+         <button onClick={this.darkMode}>Day Mode</button>
+       </body>
+    )
+
+  }
+};
+}
